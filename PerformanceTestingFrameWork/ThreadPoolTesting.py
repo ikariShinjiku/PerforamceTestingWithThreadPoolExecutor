@@ -5,6 +5,7 @@ import time
 
 postResponseList = []
 getResponseList = []
+
 if __name__ == '__main__':
     getUrl = 'http://127.0.0.1:5000/GET'
     postUrl = 'http://127.0.0.1:5000/POST'

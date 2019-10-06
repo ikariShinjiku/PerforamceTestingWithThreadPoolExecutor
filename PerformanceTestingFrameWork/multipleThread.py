@@ -7,7 +7,7 @@ class multipleThread:
         startTime=time.time()
         process = ThreadPoolExecutor(max_workers=pressure)
         for i in range(pressure):
-            process.submit(httpFucntion(getUrl, postUrl, getHeaders, postHeader, getTimeout, postTime, postParameters, getParameters))
+            process.submit(httpFucntion, getUrl, postUrl, getHeaders, postHeader, getTimeout, postTime, postParameters, getParameters)
         process.shutdown(wait=True)
         endTime=time.time()
         print("This thread end in :"+str(endTime-startTime))
@@ -15,8 +15,8 @@ class multipleThread:
 
     def executedWithacerlate(accerlate,pressure, httpFucntion, getUrl, postUrl, getHeaders, postHeader, getTimeout, postTime, postParameters, getParameters):
         executedTime=accerlate
-        while(executedTime<pressure):
+        while(executedTime<=pressure):
             multipleThread.pressureEachTime(executedTime, httpFucntion, getUrl, postUrl, getHeaders, postHeader, getTimeout, postTime, postParameters, getParameters)
             executedTime=executedTime+accerlate
-        if(executedTime+accerlate>pressure and executedTime<pressure):
-            multipleThread.pressureEachTime(pressure, httpFucntion)
+        if(executedTime-accerlate<pressure and executedTime>pressure):
+            multipleThread.pressureEachTime(pressure, httpFucntion, getUrl, postUrl, getHeaders, postHeader, getTimeout, postTime, postParameters, getParameters)

@@ -13,8 +13,8 @@ if __name__ == '__main__':
     Coupon = random.randint(1, 1000)
     postParameters = {'Price': str(Price), 'Coupon': str(Coupon)}
     getParameters = {'Coupon': str(Coupon)}
-    multipleThread.multipleThread.executedWithacerlate(10, 100, UserTask.UserTask.GetAndPost, getUrl, postUrl, getHeaders, postHeader, getTimeout, postTime, postParameters, getParameters)
-    # for i in multipleThread.getResponseList:
-    #     print("Get status is: "+str(i)+'\r\n')
-    # for i in multipleThread.postResponseList:
-    #     print("Post status is: "+str(i)+'\r\n')
+    multipleThread.multipleThread.executedWithacerlate(311, 311, UserTask.UserTask.GetAndPost, getUrl, postUrl, getHeaders, postHeader, getTimeout, postTime, postParameters, getParameters)
+    for i in multipleThread.getResponseList:
+        print("Get status is: "+str(i)+'\r\n')
+    for i in multipleThread.postResponseList:
+        print("Post status is: "+str(i)+'\r\n')
